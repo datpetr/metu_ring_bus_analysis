@@ -1,1 +1,87 @@
 - [Link on the report redaction](https://www.overleaf.com/5964832375fpykykxbqhjh#c71fff)  
+
+# Data Preparation & Sampling Design Decisions
+
+## Sampling Method: Stratified Sampling
+
+**We use: Stratified Random Sampling by Residence**
+
+- Divide population into 3 residence strata
+- Randomly sample from within each stratum
+- Combine results weighted by stratum size
+- More efficient than simple random sampling
+
+---
+
+## Decision 1: Why 3 Groups Instead of 9?
+
+**Problem with 9 groups:**
+- Some groups too small (n=2 to n=5)
+- Small groups = unreliable estimates
+- One outlier can skew entire group
+
+**Solution: Collapse to 3 groups**
+- East Campus: n=138
+- West Campus: n=114
+- Off-campus: n=71
+
+**Benefits:**
+- ✓ Large, stable sample sizes
+- ✓ Similar efficiency gain (~2%)
+- ✓ Credible, defensible results
+
+---
+
+## Decision 2: Why NOT Transform Data?
+
+**Why transformations don't work:**
+- Likert scales (1-5) are discrete by nature
+- Log/sqrt transforms destroy interpretability
+- "log(3.5)" has no meaning for satisfaction
+
+**Why raw data is fine:**
+- Sample size n≥71 per group is large
+- Central Limit Theorem applies to sample means
+- Non-normality on Shapiro-Wilk is expected for surveys
+- Doesn't invalidate analysis
+
+**Action:**
+- ✓ Keep original 1-5 satisfaction scores
+- ✓ Use ANOVA + Kruskal-Wallis tests
+- ✓ Report both results for robustness
+
+---
+
+## Decision 3: Why NOT Generate More Data?
+
+**You already have enough:**
+- Total n=323 respondents
+- Per-group minimum: n≥30 ✓
+- You have: n=71-138 (2-5x minimum) ✓
+
+**Why generating data is bad:**
+- Replaces real survey responses with artificial data
+- Creates false precision
+- Dishonest approach
+
+**Won't help:**
+- More data ≠ larger effect sizes
+- Your small effect (η²=0.02) is real
+- Only inflates statistical power, not practical meaning
+
+**Action:**
+- ✓ Use actual survey data as collected
+- ✓ No synthetic data needed
+- ✓ Report honestly
+
+---
+
+## Summary: Final Approach
+
+✓ Stratified Sampling by 3 residence groups  
+✓ Original Likert Scale data (1-5, no transformation)  
+✓ Real Survey Responses (n=323, no synthetic data)  
+✓ Both ANOVA & Kruskal-Wallis tests  
+✓ Confidence intervals for estimates  
+
+**Next Step:** Conduct final analysis and report results.
