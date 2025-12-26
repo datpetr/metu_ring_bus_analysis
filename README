@@ -76,6 +76,28 @@
 
 ---
 
+## Decision 4: Use Robust Estimation Methods
+
+**Why robust methods matter:**
+- Don't rely on normality assumptions
+- Work well with Likert scale data
+- Less influenced by outliers
+- Better for real-world survey data
+
+**Robust methods we use:**
+- **Kruskal-Wallis Test** (non-parametric alternative to ANOVA)
+- **Trimmed Means** (ignore top/bottom 5% of values)
+- **Bootstrapped Confidence Intervals** (resample data to estimate uncertainty)
+- **Median & IQR** (instead of mean & std dev)
+
+**Action:**
+- ✓ Report both parametric (ANOVA) and non-parametric (Kruskal-Wallis) tests
+- ✓ Use bootstrap CI for stratified estimates
+- ✓ Report median satisfaction alongside means
+- ✓ Acknowledge distribution assumptions in limitations
+
+---
+
 ## Summary: Final Approach
 
 ✓ Stratified Sampling by 3 residence groups  
